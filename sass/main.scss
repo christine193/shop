@@ -1,0 +1,42 @@
+@import '_vars';
+@import'_nav';
+@import'_shop';
+
+
+* {
+	margin: 0; padding: 0; box-sizing: border-box;
+}
+
+html, body { height: 100%; }
+
+body { font: 16px Helvetica, Arial; }
+
+body{
+    background:rgb(15, 14, 14);
+    color:$grey;
+        
+}
+
+#landing{
+  height:96vh;
+ padding:1em;
+  display:grid;
+
+}
+
+.lightSvg{
+    opacity: 0.1;
+    align-self: center;
+    justify-self: center;
+    height:350px;
+   // position:relative;
+    
+}
+
+//footer
+footer{
+text-align: center;
+
+}
+
+

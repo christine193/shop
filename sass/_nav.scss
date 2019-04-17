@@ -1,0 +1,126 @@
+
+header{
+     padding:0.5em;
+     position: fixed; 
+     width:100%;
+     z-index:5;
+     top: 0;
+     background:rgb(15, 14, 14);
+ }
+ .navToggle {
+     display:none;
+
+   
+
+ }
+ .navToggleLabel{
+
+  display:flex;
+  align-items: center;
+  float:right;
+  padding-right:0.5em;
+  margin-top:-1.2em;
+ }
+ 
+ .navToggleLabel span,
+ .navToggleLabel span::before,
+ .navToggleLabel span::after {
+   
+     background:$grey;
+     height:2px;
+     width:1.5em;
+     border-radius:2px;
+     position:relative;
+ 
+ }
+ 
+ .navToggleLabel span::before,
+ .navToggleLabel span::after {
+     content:'';
+     position: absolute;
+ }
+ .navToggleLabel span::before{
+     bottom:7px;
+ }
+ .navToggleLabel span::after{ 
+     top: 7px;
+ }
+ 
+ nav{
+   
+     position: absolute;
+     width:100%;
+     text-align:center;
+     margin:0 auto;
+     top: 100%;
+     transform: scale(1,0); //nav scroll down animation
+     transform-origin:top;
+     transition: transform 400ms ease-in-out;
+ }
+ 
+ nav li{
+    margin:0 0 1em 1em;
+    list-style-type:none;
+ }
+ 
+ nav a {
+     color:$grey;
+     text-transform:lowercase;
+     text-decoration: none;
+     letter-spacing: 0.25em;
+     font-size: 1em;
+     font-weight: 500;
+     margin-right:2em;
+     opacity:0;
+     transition:opacity 200ms ease-in-out;
+ }
+ 
+ nav a:hover {
+ color:#eee;
+ }
+ .navToggle:checked ~ nav {
+     display:block;
+     transform: scale(1,1);
+ }
+ .navToggle:checked ~ nav a {
+     opacity:1;
+     transition:opacity 250ms ease-in-out 250ms;
+ 
+ }
+ .logo{
+
+     width:155px;
+     display:block;
+     margin:0 auto;
+ }
+ 
+ @media screen and (min-width:800px){
+
+    .navToggleLabel{
+        display:none;
+    }
+    header{
+   
+        display:grid;
+        grid-template-columns:1fr auto minmax(650px,3fr) 1fr;
+   
+    }
+    .logo{
+        grid-column: 2 / span 1;
+    }
+    nav{
+        all:unset;
+        grid-column:3;
+        display:flex;
+       justify-content: flex-end;
+  
+    }
+    nav ul{
+        display:flex;
+        justify-content: flex-end;
+    }
+    nav a{
+       
+        opacity:1;
+    }
+}
